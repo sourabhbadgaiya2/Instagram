@@ -115,11 +115,11 @@ const postdiv = document.querySelector('.postdiv');
 posts.forEach((elem, i) => {
   postdiv.innerHTML += `  <div class="post">
             <div class="username">
-              <img
+             <div class="usertop"> <img
                 src="${elem.dp}"
                 alt=""
               />
-              <h4>${elem.username}</h4>
+              <h4>${elem.username}</h4></div>
               <i class="ri-more-2-fill"></i>
             </div>
             <img
@@ -128,13 +128,17 @@ posts.forEach((elem, i) => {
             />
               <div class="likes">
          <h4> <i class="ri-heart-fill"></i></h4>
-              <i class="ri-chat-3-line"></i>
+              <i class="ri-chat-3-line chat"></i>
               <i class="ri-send-plane-line"></i>
               <i class="ri-bookmark-line bookmark"></i><br />
               <span></span>
             </div>
           </div>`;
+  // ==----------------
+
+  // -----------------------------
 });
+
 var count = 0;
 const postss = document.querySelectorAll('.post');
 const none = document.querySelectorAll('.likes h4');
@@ -153,10 +157,67 @@ postss.forEach((element, i) => {
       love.style.display = 'none';
     }, 500);
     none[i].style.color = 'red';
-    none.forEach((none) => {
+    none.forEach((none, i) => {
       none.addEventListener('click', () => {
         none.style.color = 'black';
+        counts[i].innerHTML = '';
       });
+    });
+    // ---------------------------------------
+
+    // -----------------------------------------
+  });
+  //
+
+  //
+});
+
+const chat = document.querySelectorAll('.chat'); //button
+const comments = document.querySelector('.comments');
+const topLine = document.querySelector('.top-line');
+const emoji = document.querySelectorAll('.emoji h2');
+const input = document.querySelector('input');
+const inputImg = document.querySelector('.input img');
+const send = document.querySelector('.input h3');
+const msgReply = document.querySelector('.msg-reply');
+
+var inputValue;
+var cmtbox;
+
+posts.forEach((elem, i) => {
+  emoji[i].addEventListener('click', (event) => {
+    inputValue = input.value += event.target.innerHTML;
+  });
+
+  topLine.addEventListener('click', () => {
+    comments.style.display = 'none';
+    setTimeout(() => {
+      cmtbox.innerHTML = '';
+    }, 1000);
+  });
+  chat[i].addEventListener('click', (event) => {
+    comments.style.display = 'block';
+    inputImg.src = `${elem.dp}`;
+
+    send.addEventListener('click', () => {
+      cmtbox = document.querySelector('.cmt-msg');
+      cmtbox.innerHTML = `<div class="cmt-msg-img">
+                    <img
+                      src="${elem.dp}"
+                      alt=""
+                    />
+                    <div class="reply">
+                      <p class="">${elem.username}</p>
+                      <p class="msg-reply">${
+                        inputValue ? inputValue : input.value
+                      }</p>
+                      <span>reply</span>
+                    </div>
+                  </div>
+                  <p><i class="ri-heart-fill"></i></p>`;
+      input.value = '';
+      inputValue = '';
+      console.log('first');
     });
   });
 });

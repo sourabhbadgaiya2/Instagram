@@ -97,11 +97,15 @@ body {
 .username {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1.5vw;
     padding: 10px;
-    /* position: relative; */
+}
 
-
+.usertop {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
 }
 
 .username img {
@@ -127,12 +131,16 @@ body {
 }
 
 .likes {
+    margin-top: 0.5vw;
     font-size: 20px;
     padding-left: 15px;
+
 }
 
 .likes h4 {
     display: inline;
+    cursor: pointer;
+
 }
 
 .bookmark {
@@ -194,4 +202,123 @@ span {
 
 .red {
     color: red;
+    cursor: pointer;
+}
+
+.chat {
+    cursor: pointer;
+}
+
+.comments {
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.top-line {
+    height: 5px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 10px auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cmt-text {
+    padding-right: 20px;
+    float: right;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.cmt-text i {
+    font-size: 25px;
+}
+
+.border {
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cmt-msg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.cmt-msg-img {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.cmt-msg img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px white;
+}
+
+.cmt-msg p {
+    font-size: 20px;
+    /* line-height: 1vw; */
+    text-align: left;
+    cursor: pointer;
+}
+.reply{
+    text-align: left;
+    
+}
+.bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 5px 13px;
+    margin-top: calc(100% - 70px);
+}
+
+.emoji {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    cursor: pointer;
+    /* background-color: yellow; */
+}
+
+.input {
+    margin: 1.5vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.input img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px white;
+}
+
+.input input {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.input h3 {
+    font-size: 20px;
+    background-color: navy;
+    padding: 5px 10px;
+    color: white;
+    font-weight: 400;
+    border-radius: 25px;
+    cursor: pointer;
 }
