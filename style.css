@@ -10,6 +10,289 @@ body {
     width: 100%;
 }
 
+
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+    font-weight: 100;
+}
+
+.head i {
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.full-msg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    /* padding: 10px 20px; */
+    right: 100%;
+}
+
+.topUser {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+    /* color: white; */
+    /* padding: 10px 20px; */
+}
+
+.topUser i {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.searchInput {
+    background-color: hsla(0, 0%, 47%, 0.2);
+    padding: 0 10px;
+    width: 95%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin: 1vw auto;
+
+}
+
+.searchInput input {
+    padding: 10px 15px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+}
+
+.note {
+    margin: 10px 20px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    /* overflow: hidden; */
+    margin-top: 1vw;
+    font-size: 25px;
+    color: rgb(97, 95, 95);
+    text-align: center;
+
+}
+
+.note h5 {
+    background-color: hsla(0, 0%, 47%, 0.3);
+    border-radius: 25px;
+    padding: 5px;
+
+}
+
+.note h6 {
+    font-size: 15px;
+}
+
+.note img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.req {
+    margin-top: 5vw;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+}
+
+.userImg {
+    padding: 8px 20px;
+    margin-top: 0.5vw;
+    display: flex;
+    align-items: center;
+    /* gap: 1vw; */
+    font-size: 20px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.userImg:active {
+    background-color: hsla(0, 0%, 47%, 0.452);
+}
+
+.msgImg1 {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+
+.userImg img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.chats {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background: #fff;
+    z-index: 999;
+    text-align: center;
+
+}
+
+.chattop img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.midImg {
+    padding: 10px 20px;
+
+}
+
+.midImg img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.ChatUser {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.chattop {
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+    font-size: 15px;
+}
+
+
+.ChatUser .call,
+.chatLeft {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.midImg button {
+    padding: 10px 20px;
+    background-color: #66666662;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+}
+
+.midImg h3 {
+    margin: 0.5vw 0;
+}
+
+.btms {
+    /* margin-top: 33vh; */
+    width: 100%;
+    padding: 5px;
+    background-color: #55555596;
+    border-radius: 25px;
+    /* position: fixed; */
+    position: absolute;
+    bottom: 8%;
+}
+
+.sendMsg {
+    bottom: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sendMsg .camera {
+    background-color: blue;
+    padding: 5px;
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+}
+
+.sendMsg input {
+    padding: 5px;
+    background-color: transparent;
+    outline: none;
+    width: 200px;
+    border: none;
+
+}
+
+.CamMsg {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.allChats {
+    display: none;
+}
+
+.allChats span {
+    font-size: 20px;
+}
+
+.sendMsg h4 {
+    padding: 0 10px;
+    font-weight: bold;
+    color: rgb(8, 8, 58);
+    font-size: 18px;
+    display: none;
+    cursor: pointer;
+}
+
+.btmsLink i {
+    font-size: 23px;
+    margin: 0 5px;
+}
+
+.msgList {
+    padding: 5px 18px;
+}
+
+.msgList h4 {
+    padding: 10px;
+    margin: 0.8vw 0;
+    border-radius: 25px;
+    width: max-content;
+
+}
+
+.self {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.reply {
+    float: right;
+    background-color: purple;
+    color: white;
+}
+
 .main {
     height: 100%;
     width: 100%;
@@ -21,6 +304,7 @@ body {
 }
 
 .card {
+    position: relative;
     height: 600px;
     width: 400px;
     background-color: white;
@@ -30,15 +314,15 @@ body {
 }
 
 .storiyan {
+
     height: 100px;
     width: 100%;
-    background-color: rgba(128, 128, 128, 0.2);
+    /* background-color: rgba(128, 128, 128, 0.2); */
     padding: 10px;
     white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
     cursor: pointer;
-
 }
 
 .storiyan::-webkit-scrollbar {
@@ -46,7 +330,6 @@ body {
 }
 
 .story {
-
     margin-right: 5px;
     display: inline-block;
     height: 80px;
@@ -67,9 +350,7 @@ body {
     height: 90%;
     width: 100%;
     overflow-y: auto;
-    padding-bottom: 6vh;
-    /* position: relative; */
-
+    padding-bottom: 10vh;
 }
 
 .postdiv::-webkit-scrollbar {
@@ -210,7 +491,7 @@ span {
 }
 
 .comments {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     display: none;
 }
@@ -272,10 +553,12 @@ span {
     text-align: left;
     cursor: pointer;
 }
-.reply{
+
+.reply {
     text-align: left;
-    
+
 }
+
 .bottom {
     border-top: 1px solid rgba(0, 0, 0, 0.5);
     padding: 5px 13px;

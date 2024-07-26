@@ -221,3 +221,167 @@ posts.forEach((elem, i) => {
     });
   });
 });
+
+const fullMsg = document.querySelector('.full-msg');
+const txtMsg = document.querySelector('.txt-msg');
+const leftArrow = document.querySelector('.leftArrow');
+
+txtMsg.addEventListener('click', () => {
+  fullMsg.style.right = 0;
+});
+
+leftArrow.addEventListener('click', () => {
+  fullMsg.style.right = '100%';
+});
+
+const msgData = [
+  {
+    id: 1,
+    imgUrl:
+      'https://i.pinimg.com/474x/55/bb/dd/55bbdd0c2ea258b352f4d1adfc278a54.jpg',
+    username: 'Shivam',
+    icon: 'ri-camera-line',
+  },
+  {
+    id: 2,
+    imgUrl:
+      'https://i.pinimg.com/736x/e5/77/5a/e5775a963815d5d9b18187a99f00061a.jpg',
+    username: 'Shubham',
+    icon: 'ri-camera-line',
+  },
+  {
+    id: 3,
+    imgUrl:
+      'https://i.pinimg.com/564x/69/57/53/6957535e7417dc07fffca71636136229.jpg',
+    username: 'Sourabh',
+    icon: 'ri-camera-line',
+  },
+  {
+    id: 4,
+    imgUrl:
+      'https://i.pinimg.com/564x/8f/f4/83/8ff483dff5b5e739ff54db5e4dc17a96.jpg',
+    username: 'Payal',
+    icon: 'ri-camera-line',
+  },
+];
+
+const msgImg = document.querySelector('.msgImg');
+
+msgData.forEach((msgData, i) => {
+  msgImg.innerHTML += ` <div class="userImg">
+              <div class="msgImg1">
+                <img
+                  src="${msgData.imgUrl}"
+                  alt=""
+                />
+                <h5>${msgData.username}</h5>
+              </div>
+              <i class="ri-camera-line"></i>
+            </div>`;
+  const userList = document.querySelectorAll('.userImg');
+  const fullMsg = document.querySelector('.allChats');
+
+  userList.forEach((list, i) => {
+    list.addEventListener('click', (e) => {
+      const chats = document.createElement('div');
+      chats.classList.add('chats');
+
+      // ------
+      chats.innerHTML = `
+             <div class="ChatUser">
+              <div class="chattop">
+                <i class="ri-arrow-left-line chatLeft"></i>
+                <img
+                  src="${msgData.imgUrl}"
+                  alt="${i}"
+                />
+                <h2><span>${msgData.username}</span><i class="ri-arrow-down-s-line"></i></h2>
+              </div>
+              <div class="call">
+                <i class="ri-phone-line"></i> <i class="ri-video-on-line"></i>
+              </div>
+            </div>
+            <div class="midImg">
+              <img
+                src="${msgData.imgUrl}"
+                alt="${i}"
+              />
+              <h3><span>${msgData.username}</span></h3>
+          
+              <button>View Profile</button>
+            </div>
+            <div class="msgList"></div>
+            <div class="btms">
+              <div class="sendMsg">
+               <div class="CamMsg"> <i class="ri-camera-line camera"></i>
+                <input type="text" placeholder="Message..." /></div>
+                <div class="btmsLink">
+                  <i class="ri-mic-line"></i>
+                  <i class="ri-gallery-line"></i>
+                  <i class="ri-emoji-sticker-line"></i>
+                  <i class="ri-add-circle-line"></i>
+                </div>
+                <h4>Send</h4>
+              </div>
+            </div>
+          `;
+      //--------------------
+      fullMsg.appendChild(chats);
+      console.log(i, 'enter');
+      fullMsg.style.display = 'block';
+
+      const chatLeft = document.querySelector('.chatLeft');
+      chatLeft.addEventListener('click', (e) => {
+        fullMsg.style.display = 'none';
+        chats.innerHTML = '';
+      });
+      const ChatUser = document.querySelector('.ChatUser img');
+      const midImg = document.querySelector('.midImg img');
+      const midImgh3 = document.querySelector('.ChatUser span');
+      const midImgh = document.querySelector('.midImg span');
+
+      ChatUser.setAttribute('src', list.children[0].childNodes[1].src);
+      midImg.setAttribute('src', list.children[0].childNodes[1].src);
+      midImgh3.innerHTML = list.children[0].children[1].innerHTML;
+      midImgh.innerHTML = list.children[0].children[1].innerHTML;
+
+      //---------------------------------------------------------
+      const sendInput = document.querySelector('.btms input');
+      const btmsLink = document.querySelector('.btmsLink');
+      const sendMsg = document.querySelector('.sendMsg h4');
+      const msgList = document.querySelector('.msgList');
+
+      sendInput.addEventListener('click', () => {
+        btmsLink.style.display = 'none';
+        sendMsg.style.display = 'block';
+      });
+
+      sendMsg.addEventListener('click', () => {
+        console.log('first');
+
+        const h4 = document.createElement('h4');
+        h4.classList.add('self');
+        const a = (h4.innerHTML = sendInput.value);
+        msgList.appendChild(h4);
+        sendInput.value = '';
+        const profileImg = document.querySelector('.midImg');
+        profileImg.style.display = 'none';
+        btmsLink.style.display = 'block';
+        sendMsg.style.display = 'none';
+        setTimeout(() => {
+          const replyM = document.createElement('h4');
+          replyM.classList.add('reply');
+          replyM.innerHTML = a;
+          msgList.appendChild(replyM);
+        }, 1000);
+      });
+
+      //----------------------------------------------
+    });
+  });
+});
+
+{
+  /* <h4 class="self">Helloasdasdassssssss</h4>
+            <h4 class="reply">Hello</h4>  */
+}
